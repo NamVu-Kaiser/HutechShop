@@ -1,26 +1,28 @@
 <?php
-require_once __DIR__ . '/views/shares/header.php'; // Thêm header
-require_once __DIR__ . '/models/ProductModel.php'; // Thêm model để lấy danh sách sản phẩm
+require_once __DIR__ . '/views/shares/header.php';
+require_once __DIR__ . '/models/ProductModel.php';
 
 $productModel = new ProductModel($pdo);
-$products = $productModel->getAllProducts(); // Lấy danh sách sản phẩm
+$products = $productModel->getAllProducts();
 ?>
 <div style="padding: 100px">
      <div class="text-end mb-3" style="padding-bottom: 30px">
           <a href="/Hutech_Shop/views/product/create.php" class="btn btn-primary">Thêm sản phẩm</a>
      </div>
      <table class="table table-bordered">
-          <thead>
-               <tr>
-                    <th>ID</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Mô tả</th>
-                    <th>Avatar</th>
-                    <th>Danh mục</th>
-                    <th>Hành động</th>
-                    <th>Hành động</th>
-               </tr>
-          </thead>
+            <?php if (!empty($products)): ?>
+            <thead>
+                  <tr>
+                         <th>Mã sản phẩm</th>
+                         <th>Tên sản phẩm</th>
+                         <th>Mô tả</th>
+                         <th>Ảnh sản phẩm</th>
+                         <th>Danh mục sản phẩm</th>
+                         <th>Hành động</th>
+                         <th>Hành động</th>
+                  </tr>
+            </thead>
+            <?php endif; ?>
           <tbody>
                <?php if (!empty($products)): ?>
                     <?php foreach ($products as $product): ?>
@@ -29,7 +31,7 @@ $products = $productModel->getAllProducts(); // Lấy danh sách sản phẩm
                          <td><?= $product['name'] ?></td>
                          <td><?= $product['description'] ?></td>
                          <td>
-                              <img src="<?= $product['avatar'] ?>" alt="Avatar" width="50" height="50">
+                              <img src="/Hutech_Shop/images/category_<?= $product['category_id'] ?>/product_<?= $product['id'] ?>/<?= $product['product_image'] ?>" alt="<?= $product['name'] ?>" style="width: 100px; height: 100px;">
                          </td>
                          <td><?= $product['category_name'] ?></td>
                          <td>                        
@@ -54,5 +56,5 @@ $products = $productModel->getAllProducts(); // Lấy danh sách sản phẩm
 
 
 <?php
-require_once __DIR__ . '/views/shares/footer.php'; // Thêm footer
+require_once __DIR__ . '/views/shares/footer.php';
 ?>
