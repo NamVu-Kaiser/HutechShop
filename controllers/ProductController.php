@@ -77,10 +77,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $imageName = basename($productImage['name']);
             $imagePath = $productFolder . '/' . $imageName;
 
-            if (isFileExists($productFolder, $imageName)) {
-                die('Hình ảnh đã tồn tại!');
+            if (!isFileExists($productFolder, $imageName)) {
+                move_uploaded_file($productImage['tmp_name'], $imagePath);
             }
-            move_uploaded_file($productImage['tmp_name'], $imagePath);
         }
 
         // 4. Cập nhật sản phẩm trong DB
