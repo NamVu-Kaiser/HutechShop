@@ -6,7 +6,7 @@ $categories = $pdo->query("SELECT * FROM Categories")->fetchAll(PDO::FETCH_ASSOC
 ?>
 <div>
     <h1 class="mt-4">Thêm sản phẩm</h1>
-    <form method="POST" action="../../controllers/ProductController.php">
+    <form method="POST" action="../../controllers/ProductController.php" enctype="multipart/form-data">
      <div class="mb-3 row">
          <label for="name" class="form-label col-sm-2 col-form-label">Tên sản phẩm</label>
          <div class="col-sm-10">
@@ -20,14 +20,14 @@ $categories = $pdo->query("SELECT * FROM Categories")->fetchAll(PDO::FETCH_ASSOC
          </div>
      </div>
      <div class="mb-3 row">
-         <label for="avatar" class="form-label col-sm-2 col-form-label">Ảnh</label>
+         <label for="product_image" class="form-label col-sm-2 col-form-label">Ảnh</label>
          <div class="col-sm-10">
              <div id="image-preview" class="mb-3"></div>
-             <input type="file" class="form-control" id="avatar" name="avatar" accept="image/*" required>
+             <input type="file" class="form-control" id="product_image" name="product_image" accept="image/*" required>
          </div>
      </div>
      <script>
-     document.getElementById('avatar').addEventListener('change', function(event) {
+     document.getElementById('product_image').addEventListener('change', function(event) {
           const file = event.target.files[0];
           if (file) {
                const reader = new FileReader();

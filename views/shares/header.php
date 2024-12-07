@@ -12,7 +12,7 @@
             <h1>Hutech Shop</h1>
             <nav>
                 <a href="/Hutech_Shop/views/product/list.php" class="btn btn-outline-primary" style="margin-right: 100px;">Danh sách sản phẩm</a>
-                <a href="/views/categories/list.php" class="btn btn-outline-primary">Danh mục sản phẩm</a>
+                <a href="/Hutech_Shop/views/category/list.php" class="btn btn-outline-primary">Danh mục sản phẩm</a>
             </nav>
         </header>
      </div>
