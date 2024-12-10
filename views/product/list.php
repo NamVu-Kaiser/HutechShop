@@ -8,12 +8,11 @@ $products = $productModel->getAllProducts();
 <h1 class="mt-4">Danh sách sản phẩm</h1>
 <div style="padding: 100px;">
     <div class="text-end mb-3" style="padding-bottom: 30px">
-        <a href="/Hutech_Shop/views/product/create.php" class="btn btn-primary">Thêm sản phẩm</a>
     </div>
     <table class="table table-bordered">
        <thead>
           <tr>
-             <th>Mã sản phẩm</th>
+             <th>Mã sản phẩm1 2 3 4 </th>
              <th>Tên sản phẩm</th>
              <th>Mô tả</th>
              <th>Ảnh sản phẩm</th>
