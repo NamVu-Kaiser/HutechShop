@@ -1,29 +1,17 @@
-<?php
-// controllers/CategoryController.php
-require_once __DIR__ . '/../models/CategoryModel.php';
+<?php 
+    require_once 'models/CategoryModel.php';
+    class CategoryController{
+        private $categoryModel;
+        private $pdo;
 
-$categoryModel = new CategoryModel($pdo);
+        public function __construct($pdo){
+            $this->categoryModel = new CategoryModel($pdo);
+            $this->pdo = $pdo;
+        }
 
-// Thêm danh mục
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['create'])) {
-        $name = $_POST['name'];
-        $categoryModel->createCategory($name);
-        header('Location: /HutechShop/views/categories/list.php');
-    }
-
-    // Sửa danh mục
-    if (isset($_POST['update'])) {
-        $id = $_POST['id'];
-        $name = $_POST['name'];
-        $categoryModel->updateCategory($id, $name);
-        header('Location: /HutechShop/views/categories/list.php');
-    }
-
-    // Xóa danh mục
-    if (isset($_POST['delete'])) {
-        $id = $_POST['id'];
-        $categoryModel->deleteCategory($id);
-        header('Location: /HutechShop/views/categories/list.php');
-    }
+        public function GetAllCategories() {
+            $cate = $this->categoryModel->GetAllCategories();
+            return $cate;
+        }   
 }
+?>

@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hutech Shop</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THẮNG SHOP</title>
+  <link rel="stylesheet" href="media/css/style.css">
 </head>
+
 <body>
+
+  <header>
     <div class="container">
-        <header class="d-flex justify-content-between align-items-center py-3 mb-4 border-bottom">
-            <h1>Hutech Shop</h1>
-            <nav>
-                <a href="/Hutech_Shop/views/product/list.php" class="btn btn-outline-primary" style="margin-right: 100px;">Danh sách sản phẩm</a>
-                <a href="/Hutech_Shop/views/category/list.php" class="btn btn-outline-primary">Danh mục sản phẩm</a>
-            </nav>
-        </header>
-     </div>
+      <div class="top-bar"> 
+        <div class="logo">THẮNG SHOP</div>
+        <div class="actions">
+          <a href="/views/user/Login.php"><img src="../Media/icon/user.png" alt="Login">Đăng Nhập</a>
+          <a href="/views/user/Cart.php"><img src="../Media/icon/cart.png" alt="Cart">Giỏ hàng</a>
+        </div>
+      </div>
+      <form action="#" method="get" class="search-form">
+        <input type="text" placeholder="Nhập từ khóa tìm kiếm">
+        <button type="submit">Tìm kiếm</button>
+      </form>
+    </div>
+  </header>
+
 </body>
 </html>

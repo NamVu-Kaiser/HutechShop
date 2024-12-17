@@ -1,7 +1,6 @@
 <?php
-// config/db.php
 $host = 'localhost';
-$dbname = 'HutechShop';
+$dbname = 'Ecommerce_Shop';
 $username = 'root';
 $password = '';
 
